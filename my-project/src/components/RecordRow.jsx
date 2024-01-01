@@ -8,7 +8,7 @@ const RecordRow = ({ record, setAllRecords, allRecords }) => {
     const filteredResults = allRecords.filter((rec) => rec?._id != record?._id);
     setAllRecords(filteredResults);
     dispatch(setRecords({ records: filteredResults }));
-    await fetch(`http://localhost:8000/record/delete/${record?._id}`, {
+    await fetch(`https://mindfulgurukulbackend.onrender.com/record/delete/${record?._id}`, {
       method: "DELETE",
     }).catch(() => alert("Error deleting"));
   };

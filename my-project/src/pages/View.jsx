@@ -28,7 +28,7 @@ const View = () => {
       alert("Record not found");
     }
     try {
-      const res = await fetch(`http://localhost:8000/record/getrecord/${id}`);
+      const res = await fetch(`https://mindfulgurukulbackend.onrender.com/record/getrecord/${id}`);
       if (res.ok) {
         const { data } = await res.json();
         setRecord(data);
@@ -47,7 +47,7 @@ const View = () => {
     navigate("/edit/" + id);
   };
   const handleDelete = async () => {
-    await fetch(`http://localhost:8000/record/delete/${id}`, {
+    await fetch(`https://mindfulgurukulbackend.onrender.com/record/delete/${id}`, {
       method: "DELETE",
     })
       .then(async (res) => {

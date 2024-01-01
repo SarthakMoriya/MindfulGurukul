@@ -14,7 +14,7 @@ const Signin = () => {
   const navigate = useNavigate();
 
   const handleLogin = async (values, onSubmitProps) => {
-    await fetch("http://localhost:8000/auth/signin", {
+    await fetch("https://mindfulgurukulbackend.onrender.com/auth/signin", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email: values.email, password: values.password }),

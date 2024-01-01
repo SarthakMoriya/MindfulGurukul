@@ -15,7 +15,9 @@ const App = () => {
   const dispatch = useDispatch();
 
   const fetchRecords = async () => {
-    await fetch("http://localhost:8000/record/getrecords").then(async (res) => {
+    await fetch(
+      "https://mindfulgurukulbackend.onrender.com/record/getrecords"
+    ).then(async (res) => {
       const data = await res.json();
       dispatch(setRecords({ records: data }));
     });

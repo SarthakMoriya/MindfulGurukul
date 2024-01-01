@@ -15,7 +15,7 @@ const Create = () => {
   const navigate=useNavigate()
   const dispatch = useDispatch();
   const handleRecordSubmit = async (values, onSubmitProps) => {
-    await fetch("http://localhost:8000/record/create", {
+    await fetch("https://mindfulgurukulbackend.onrender.com/record/create", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

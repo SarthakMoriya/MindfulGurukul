@@ -40,7 +40,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(username, password, email, gender, phone, contacted);
-    await fetch("http://localhost:8000/auth/signup", {
+    await fetch("https://mindfulgurukulbackend.onrender.com/auth/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

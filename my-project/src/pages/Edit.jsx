@@ -21,9 +21,12 @@ const Edit = () => {
   const [createdAt, setCreatedAt] = useState("");
 
   const fetchRecord = async () => {
-    const res = await fetch(`http://localhost:8000/record/getrecord/${id}`, {
-      method: "GET",
-    });
+    const res = await fetch(
+      `https://mindfulgurukulbackend.onrender.com/record/getrecord/${id}`,
+      {
+        method: "GET",
+      }
+    );
     const { data } = await res.json();
     setPhoneNo(data.phoneNo);
     setEmail(data.email);
@@ -36,15 +39,18 @@ const Edit = () => {
 
   const handleRecordSubmit = async (e) => {
     e.preventDefault();
-    await fetch(`http://localhost:8000/record/edit/${id}`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        username,
-        email,
-        phoneNo,
-      }),
-    }).then(async (res) => {
+    await fetch(
+      `https://mindfulgurukulbackend.onrender.com/record/edit/${id}`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          username,
+          email,
+          phoneNo,
+        }),
+      }
+    ).then(async (res) => {
       if (res.ok) {
         const records = await fetchAllRecords();
         dispatch(setRecords({ records }));
